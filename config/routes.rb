@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+   match '/home', to: 'static_pages#home',  via: 'get' 
+  match '/help',to: 'static_pages#help',  via: 'get' 
+  match '/about',   to: 'static_pages#about',  via: 'get' 
+  match '/contact', to: 'static_pages#contact',  via: 'get' 
+ 
+  root :to => 'static_pages#home' 
+
   resources :empresas
 
   resources :municipios
@@ -9,7 +16,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'clientes#index'
+  # root 'clientes#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
